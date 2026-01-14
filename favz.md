@@ -1,5 +1,5 @@
 ---
-hi im wendy and i like 
+# hi im wendy and i like 
 # BDSM
 ---
 fruit
