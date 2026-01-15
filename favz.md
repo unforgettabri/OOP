@@ -1,6 +1,5 @@
----
-![bdsm](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXJkdm4yMHF3OGJrdmh3cjVhbjZlYTFtejRwaTl6Z3c0MHoxYm9nOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/12SL6KWV4rAzK0/giphy.gif)
 # hi im wendy and i like 
+![bdsm](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXJkdm4yMHF3OGJrdmh3cjVhbjZlYTFtejRwaTl6Z3c0MHoxYm9nOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/12SL6KWV4rAzK0/giphy.gif)
 ---
 # BANANAZ
 ![banana](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDA4dHF4bDZ2eWx1MnBubzlreXU4b2xrZTk0M2VjcTYzZmRjN2J0eiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1uPiL9Amv5zkk/giphy.gif)
