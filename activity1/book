@@ -1,0 +1,23 @@
+public class Main{
+    public static void main(String[] args) {
+        //create two objects for main method 
+        Book book1 = new Book("Death on the Nile", "Agatha Christie", 9780062573230, 1937);
+        Book book2 = new Book("Harry Potter and the Prisoner of Azkaban", "J.K. Rowling", 9780439708180, 1999);
+    }
+}
+
+public class Book {
+    //initializing 
+    String title;
+    String author;
+    long isbn;
+    int publicationYear;
+
+    public Book(String title, String author, long isbn, int publicationYear) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.publicationYear = publicationYear;
+    }
+}
+
