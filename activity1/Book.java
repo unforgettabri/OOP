@@ -15,16 +15,6 @@ public class Book {
     }
 
     public Book() {
-        this.title = "Holy Scriptures NWT";
-        this.author = "Watchtower Bible and Tract Society";
-        this.isbn = 9780529084023l;
-        this.publicationDate = "January 1, 2015";
-
-        // Object this2;
-        // this2.title = "The Alchemist";   
-        // this2.author = "Paulo Coelho";
-        // this2.isbn = 9780061122415l;
-        // this2.publicationDate = "May 1, 1993";
     }
 
     void printBookInfo() {
@@ -34,3 +24,6 @@ public class Book {
             System.out.println("Publication Date: " + publicationDate);
     } 
 }
+
+//this.____
+// - talks abt the object (not the parameter)

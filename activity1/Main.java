@@ -11,14 +11,19 @@ public class Main{
         System.out.println(); //for spaces
         book2.printBookInfo();
 
-        //initialize all fields with your favorite books
-        Book favBook1 = new Book();
-        System.out.println(); //for spaces
-        favBook1.printBookInfo();
+        Book book3 = new Book("Holy Scriptures NWT", "Watchtower Bible and Tract Society", 9780529084023l, "January 1, 2015");
+        Book book4 = new Book ("The Alchemist", "Paulo Coelho", 9780061122415l, "May 1, 1993");
 
-        Book favBook2 = new Book();
-        System.out.println(); //for spaces
-        favBook2.printBookInfo();
+        //printing the output
+        book1.printBookInfo();
 
+        System.out.println(); //for spaces
+        book2.printBookInfo();
+        
+        System.out.println(); //for spaces
+        book3.printBookInfo();
+
+        System.out.println(); //for spaces
+        book4.printBookInfo();
     }
 }
