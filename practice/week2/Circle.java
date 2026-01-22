@@ -1,3 +1,4 @@
+package practice.week2;
 public class Circle {
     double radius;
     static double PI = 3.14159;
@@ -11,3 +12,30 @@ public class Circle {
         return area;
     }
 }
+
+/* 
+default constructor
+-------------------
+
+public Circle(){}
+
+public circle (double radius){
+    this.radius = radius
+}
+
+public double getArea(){
+    return PI * radius * radius;
+}
+
+-------------------
+       main
+------------------
+pc main{
+    psvms args{
+    
+    Circle icrlce = new Circle(250);
+    double area = circle.getArea();
+    SOUT
+    }
+}
+     */
