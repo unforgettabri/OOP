@@ -24,6 +24,14 @@ public class Book {
             System.out.println("Publication Date: " + publicationDate);
     } 
 }
+//**********************
+//        notEs
+// ********************* 
 
 //this.____
 // - talks abt the object (not the parameter)
+
+//instance variables - non static variable (dynamic)
+//                   - forexample: title, author, isbn
+
+// static int totalBooks - a static variable 
