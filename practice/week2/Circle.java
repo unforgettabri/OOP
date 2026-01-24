@@ -14,6 +14,7 @@ public class Circle {
 }
 
 /* 
+-------------------
 default constructor
 -------------------
 
@@ -30,8 +31,8 @@ public double getArea(){
 -------------------
        main
 ------------------
-pc main{
-    psvms args{
+public class main{
+    public static void main (string[] args){
     
     Circle icrlce = new Circle(250);
     double area = circle.getArea();
