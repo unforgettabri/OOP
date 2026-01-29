@@ -7,8 +7,10 @@ public class Student {
     // create a field to track total number of students
     static int totalStudents = 0;
 
-    // Create a constructor that accepts parameters for studentId, firstName, middleName, lastName, gender, and email
-    public Student(String firstName, String middleNameString, String lastName, String gender, String email, int studentID) {
+    // Create a constructor that accepts parameters for studentId, firstName,
+    // middleName, lastName, gender, and email
+    public Student(String firstName, String middleNameString, String lastName, String gender, String email,
+            int studentID) {
         this.firstName = firstName;
         this.middleNameString = middleNameString;
         this.lastName = lastName;
@@ -18,7 +20,8 @@ public class Student {
         totalStudents++;
     }
 
-    // Create a method public void displayStudentInfo() that prints all the details for a specific student.
+    // Create a method public void displayStudentInfo() that prints all the details
+    // for a specific student.
     public void displayStudentInfo() {
         System.out.println("Student ID: " + studentID);
         System.out.println("First Name: " + firstName);
@@ -28,7 +31,8 @@ public class Student {
         System.out.println("Email: " + email);
     }
 
-    //Create a method public static int getTotalStudents() that returns the current value of the totalStudents field.
+    // Create a method public static int getTotalStudents() that returns the current
+    // value of the totalStudents field.
     public static int getTotalStudents() {
         return totalStudents;
     }
