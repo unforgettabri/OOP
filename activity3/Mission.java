@@ -51,7 +51,16 @@ public class Mission {
     }
 
     public displayMissionBriefing(){
-        //Use a DateTimeFormatter to display the deadline in a readable format (e.g., "MMMM dd, yyyy").
-        // di a tapos
+        String pattern = "MMMM dd yyyy";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern, Locale.ENGLISH);
+    
+        System.out.printf("""
+
+                *** MISSION BRIEFING ***
+                Target:     %s
+                Difficulty: %s
+                Deadline:   %s
+                
+                """, this.missionTarget, this.difficulty, this.missionDeadline.format(formatter));
     }
 }
