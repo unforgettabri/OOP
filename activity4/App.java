@@ -1,5 +1,3 @@
-package activity4;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -7,7 +5,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // load accounts
         // BankAccount[] accounts;
         ArrayList<BankAccount> accounts = new ArrayList<>();
@@ -33,6 +31,13 @@ public class App {
             } else {
                 System.out.println("Invalid credentials...");
             }
+        } else {
+            String message = "User not present. . .";
+            for (char c : message.toCharArray()) {
+                System.out.print(c);
+                Thread.sleep(100); // Delay in milliseconds
+            }
+            System.out.println(); // New line at the end
         }
 
     }
@@ -77,7 +82,12 @@ public class App {
                         break;
 
                     case 0:
-                        System.out.println("Thank you for using JAVA ATM.");
+                        String message = "Thank you for using JAVA ATM!";
+                        for (char c1 : message.toCharArray()) {
+                            System.out.print(c1);
+                            Thread.sleep(100); // Delay in milliseconds
+                        }
+                        System.out.println(); // New line at the end
                         break;
                 }
 
