@@ -1,10 +1,10 @@
 public class BankAccount {
     private String acctNo;
     private int pin;
-    private float balance = 0;
+    private double balance = 0;
     private String fullName;
 
-    public BankAccount(String acctNo, int pin, float balance, String fullName) {
+    public BankAccount(String acctNo, int pin, double balance, String fullName) {
         this.acctNo = acctNo;
         this.pin = pin;
         this.fullName = fullName;
@@ -25,7 +25,7 @@ public class BankAccount {
         return this.pin == pin;
     }
 
-    public float getBalance() {
+    public double getBalance() {
         return balance;
     }
 
@@ -48,26 +48,33 @@ public class BankAccount {
         }
     }
 
-    public boolean deposit(float balance) {
-        if (balance > 0) {
-            this.balance += balance;
+   public boolean deposit(double amount) {
+        if (amount > 0) {
+            this.balance += amount;
             return true;
         } else {
             System.out.println("Error: You cannot deposit less than 1 peso.");
             return false;
         }
-
     }
 
-    public boolean withdraw(float amount) {
-        if (balance >= amount) {
-            balance = balance - amount;
-            System.out.println("Withraw success...");
-        } else {
-            System.out.println("Error: Insufficient balance");
+
+   public boolean withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("Error: Invalid amount");
+            return false;
         }
-        return false;
+    
+        if (amount > balance) {
+            System.out.println("Error: Insufficient balance");
+            return false;
+        }
+    
+        balance -= amount;
+        System.out.println("Withdraw success...");
+        return true;
     }
+
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
