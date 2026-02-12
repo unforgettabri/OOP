@@ -68,23 +68,26 @@ public class App {
                         System.out.println("Current Balance: " + account.getBalance());
                         break;
 
-                    // error: npot workin jusq
-                    // case 2:
-                    // System.out.print("Enter deposit amount: ");
-                    // float dep = sc.nextFloat();
-                    // account.deposit(dep);
-                    // System.out.println("Deposit successful.");
-                    // break;
+                    case 2:
+                        System.out.print("Enter deposit amount: ");
+                        if (account.deposit(sc.nextFloat())) {
+                            System.out.println("Deposit successful.");
+                            System.out.println("New Balance: " + account.getBalance());
+                        } else {
+                            System.out.println("Invalid deposit amount.");
+                        }
+                        break;
+                
+                    case 3:
+                        System.out.print("Enter withdraw amount: ");
+                        if (account.withdraw(sc.nextFloat())) {
+                            System.out.println("Withdrawal successful.");
+                            System.out.println("New Balance: " + account.getBalance());
+                        } else {
+                            System.out.println("Transaction failed. Check balance or amount.");
+                        }
+                        break;
 
-                    // case 3:
-                    // System.out.print("Enter withdraw amount: ");
-                    // float wd = sc.nextFloat();
-                    // if (account.withdraw(wd)) {
-                    // System.out.println("Withdrawal successful.");
-                    // } else {
-                    // System.out.println("Insufficient balance.");
-                    // }
-                    // break;
 
                     case 0:
                         exitSave(account);
@@ -153,6 +156,25 @@ public class App {
             }
         }
         System.exit(0);
+    }
+
+    public boolean deposit(float amount) {
+    if (amount <= 0) {
+        return false;
+    }
+    balance += amount;
+    return true;
+    }
+
+    public boolean withdraw(float amount) {
+        if (amount <= 0) {
+            return false;
+        }
+        if (amount > balance) {
+            return false;
+        }
+        balance -= amount;
+        return true;
     }
 
     public static void loadAccounts(ArrayList<BankAccount> accounts) {
