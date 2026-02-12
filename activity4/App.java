@@ -1,6 +1,10 @@
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -64,29 +68,26 @@ public class App {
                         System.out.println("Current Balance: " + account.getBalance());
                         break;
 
-                    case 2:
-                        System.out.print("Enter deposit amount: ");
-                        float dep = sc.nextFloat();
-                        account.deposit(dep);
-                        System.out.println("Deposit successful.");
-                        break;
+                    // error: npot workin jusq
+                    // case 2:
+                    // System.out.print("Enter deposit amount: ");
+                    // float dep = sc.nextFloat();
+                    // account.deposit(dep);
+                    // System.out.println("Deposit successful.");
+                    // break;
 
-                    case 3:
-                        System.out.print("Enter withdraw amount: ");
-                        float wd = sc.nextFloat();
-                        if (account.withdraw(wd)) {
-                            System.out.println("Withdrawal successful.");
-                        } else {
-                            System.out.println("Insufficient balance.");
-                        }
-                        break;
+                    // case 3:
+                    // System.out.print("Enter withdraw amount: ");
+                    // float wd = sc.nextFloat();
+                    // if (account.withdraw(wd)) {
+                    // System.out.println("Withdrawal successful.");
+                    // } else {
+                    // System.out.println("Insufficient balance.");
+                    // }
+                    // break;
 
                     case 0:
-                        String message = "Thank you for using JAVA ATM!";
-                        for (char c1 : message.toCharArray()) {
-                            System.out.print(c1);
-                            Thread.sleep(100); // Delay in milliseconds
-                        }
+                        exitSave(account);
                         System.out.println(); // New line at the end
                         break;
                 }
@@ -98,6 +99,60 @@ public class App {
             }
 
         } while (c != 0);
+    }
+
+    public static void exitSave(BankAccount updatedAccount) {
+
+        ArrayList<BankAccount> accounts = new ArrayList<>();
+        loadAccounts(accounts);
+
+        // Update the modified account in the list
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).getAcctNo().equals(updatedAccount.getAcctNo())) {
+                accounts.set(i, updatedAccount);
+                break;
+            }
+        }
+
+        // Save back to accounts.csv
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("accounts.csv"))) {
+
+            // Write header
+            writer.write("Account No.,Name,Balance,Pin");
+            writer.newLine();
+
+            // Write updated data
+            for (BankAccount acc : accounts) {
+                writer.write(acc.getAcctNo() + "," + acc.getFullName() + "," + acc.getBalance() + "," + acc.getPin());
+                writer.newLine();
+            }
+
+            String message = "Accounts successfully saved to accounts.csv";
+            for (char c : message.toCharArray()) {
+                System.out.print(c);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error saving accounts.");
+            e.printStackTrace();
+        }
+
+        System.out.println(); // basta ppng space
+        String message = "Program Terminated.";
+        for (char c : message.toCharArray()) {
+            System.out.print(c);
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.exit(0);
     }
 
     public static void loadAccounts(ArrayList<BankAccount> accounts) {
