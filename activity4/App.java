@@ -62,6 +62,7 @@ public class App {
 
             try {
                 c = sc.nextInt();
+                sc.nextLine(); // clear input buffer
 
                 switch (c) {
                     case 1:
@@ -93,14 +94,17 @@ public class App {
                         exitSave(account);
                         System.out.println(); // New line at the end
                         break;
-                }
 
+                    default:
+                        System.out.println("Invalid choice. Please select 0, 1, 2, or 3.");
+                        break;
+                }
             } catch (Exception e) {
                 System.out.println("Invalid input. Numbers only.");
                 sc.nextLine(); // clear input buffer
                 c = -1;
             }
-
+        
         } while (c != 0);
     }
 
@@ -157,26 +161,7 @@ public class App {
         }
         System.exit(0);
     }
-
-    public boolean deposit(float amount) {
-    if (amount <= 0) {
-        return false;
-    }
-    balance += amount;
-    return true;
-    }
-
-    public boolean withdraw(float amount) {
-        if (amount <= 0) {
-            return false;
-        }
-        if (amount > balance) {
-            return false;
-        }
-        balance -= amount;
-        return true;
-    }
-
+    
     public static void loadAccounts(ArrayList<BankAccount> accounts) {
         try (Scanner reader = new Scanner(new File("accounts.csv"))) {
             reader.nextLine(); // skip the header
