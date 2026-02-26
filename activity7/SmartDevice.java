@@ -1,8 +1,8 @@
 public class SmartDevice {
 
     // attributes
-    public String deviceName;
-    boolean isOn;
+    private String deviceName;
+    private boolean isOn;
 
     // getters
     public String getDeviceName() {
@@ -22,26 +22,22 @@ public class SmartDevice {
         this.isOn = isOn;
     }
 
-    public SmartDevice(String deviceName, boolean isOn) {
+    public SmartDevice(String deviceName) {
         this.deviceName = deviceName;
         this.isOn = false;
     }
 
     // Switches the device from on to off, or off to on.
     public void togglePower() {
-        if (isOn) {
-            isOn = false;
-        } else {
-            isOn = true;
-        }
+        setOn(!isOn());
     }
 
     // Prints the device name and its current power state.
     public void displayStatus() {
-        if (isOn) {
-            System.out.println(deviceName + " is currently ON.");
+        if (isOn()) {
+            System.out.println(getDeviceName() + " is currently ON.");
         } else {
-            System.out.println(deviceName + " is currently OFF.");
+            System.out.println(getDeviceName() + " is currently OFF.");
         }
     }
 }
