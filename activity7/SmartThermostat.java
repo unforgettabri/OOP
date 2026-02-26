@@ -11,7 +11,7 @@ public class SmartThermostat extends SmartDevice {
     @Override
     public void displayStatus() {
         super.displayStatus();
-        System.out.println("Temperature: " + temperature);
+        System.out.println("Temperature: " + temperature  + "°C");
     }
 
     // Prints a warning if the temperature is set above 30°C.
