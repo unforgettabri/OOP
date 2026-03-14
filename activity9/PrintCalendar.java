@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import java.util.GregorianCalendar;
+
 public class PrintCalendar {
 
     /** Main method */
@@ -26,7 +28,11 @@ public class PrintCalendar {
 
     /** A stub for printMonthTitle may look like this */
     public static void printMonthTitle(int year, int month) {
-        String monthName = getMonthName(month);
+        
+        //String monthName = getMonthName(month);
+        GregorianCalendar cal = new GregorianCalendar(year, month - 1, 1);
+        String monthName = cal.getDisplayName(GregorianCalendar.MONTH, GregorianCalendar.LONG, java.util.Locale.getDefault());
+
         System.out.println(monthName + " " + year);
         System.out.println("Sun Mon Tue Wed Thu Fri Sat");
     }
@@ -34,8 +40,11 @@ public class PrintCalendar {
     /** A stub for printMonthBody may look like this */
     public static void printMonthBody(int year, int month) {
 
-        int startDay = getStartDay(year, month);
-        int daysInMonth = getNumberOfDaysInMonth(year, month);
+        // int startDay = getStartDay(year, month);
+        // int daysInMonth = getNumberOfDaysInMonth(year, month);
+        GregorianCalendar cal = new GregorianCalendar(year, month - 1, 1);
+        int startDay = cal.get(GregorianCalendar.DAY_OF_WEEK);
+        int daysInMonth = cal.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
 
         // print starting spaces
         for (int i = 1; i < startDay; i++) {
@@ -53,7 +62,7 @@ public class PrintCalendar {
         System.out.println();
     }
 
-    /** A stub for getMonthName may look like this */
+    /** A stub for getMonthName may look like this
     public static String getMonthName(int month) {
         String name = "";
         switch (month) {
@@ -95,9 +104,9 @@ public class PrintCalendar {
                 break;
         }
         return name;
-    }
+    } basta wala na to */
 
-    /** A stub for getStartDay may look like this */
+    /** A stub for getStartDay may look like this 
     public static int getStartDay(int year, int month) {
         int m = month;
         int y = year;
@@ -145,9 +154,9 @@ public class PrintCalendar {
                 weekday = 1;
         }
         return weekday;
-    }
+    } */
 
-    /** A stub for getNumberOfDaysInMonth may look like this */
+    /** A stub for getNumberOfDaysInMonth may look like this 
     public static int getNumberOfDaysInMonth(int year, int month) {
         switch (month) {
             case 1:
@@ -167,12 +176,12 @@ public class PrintCalendar {
                 return isLeapYear(year) ? 29 : 28;
         }
         return 0;
-    }
+    } */
 
-    /** A stub for isLeapYear may look like this */
+    /** A stub for isLeapYear may look like this 
     public static boolean isLeapYear(int year) {
         return (year % 4 == 0 &&
                 (year % 100 != 0 || year % 400 == 0));
-    }
+    } */
 
 }
